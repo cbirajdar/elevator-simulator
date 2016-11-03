@@ -8,6 +8,10 @@ public class Passenger {
 
     private Direction direction;
 
+    public int getId() {
+        return id;
+    }
+
     public int getFrom() {
         return from;
     }
@@ -29,5 +33,18 @@ public class Passenger {
         this.from = from;
         this.to = to;
         this.direction = direction;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Passenger passenger = (Passenger) o;
+        return id == passenger.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }
